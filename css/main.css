@@ -1,0 +1,173 @@
+/**
+	#1A446C - Blue grey
+	#689DC1 - Light blue
+	#D4E6F4 - Very light blue
+	#EEE4B9 - Light tan
+	#8D0D19 - Burgundy
+**/
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	width: 100%;
+	min-height: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	background: #D4E6F4;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+img {
+	border: none;
+}
+table, tr, td {
+	border-collapse: collapse;
+	vertical-align: top;
+	font-size: 13px;
+	line-height: 15px;
+}
+a{
+	color: blue;
+}
+#main_header{
+	margin-top: -70px;
+	height: 70px;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background: #1A446C;
+	color: #D4E6F4;
+}
+#main_header h1{
+	padding: 1em;
+	margin: 0px;
+	font-size: 25px;
+}
+#main_body{
+	padding-bottom:40px;   /* Height of the footer */
+	height: 628px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	background: #EEE4B9;
+}
+
+#the_footer{
+	margin: 0px;
+	padding: 10px;
+	text-align: center;
+	background: #1A446C;
+	color: #D4E6F4;
+	font-size: 12px;
+	
+	height: 40px;
+}
+
+/** Navigation **/
+
+#navigation{
+	height: 628px;
+	width: 230px;
+	padding: 1em 2em;
+	color: #D4E6F4;
+	background:#8D0D19;
+}
+
+#navigation a{
+	color: #D4E6F4;
+	text-decoration: none;
+}
+#navigation li{
+	list-style: none;
+	padding: 15px;
+	
+	font-size: 14px;
+	font-family: Tahoma;
+}
+ul.subjects{
+	padding-left: 0;
+	list-style: none;
+}
+.selected{
+	font-weight: bold;
+}
+
+/** Page Content **/
+#main_page{
+	padding-left: 2em;
+	vertical-align: top;
+	background: #EEE4B9;
+}
+#main_page h2{
+	color: #8D0D19;
+	margin-top: 1em;
+}
+#main_page h3{
+	color: #8D0D19;
+}
+#main_page h4{
+	color: #8D0D19;
+}
+#data_details td{
+	width: 250px;
+}
+#logoutlink{
+	color: blue;
+}
+#customer_orders{
+	width: 900px;
+	background: white;
+	border-collapse: collapse;
+}
+#customer_orders td { 
+    padding: 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+#customer_orders th {
+	padding: 5px;
+    border: 1px solid black;
+	text-align: center;
+}
+#customer_details{
+	width: 900px;
+	background: white;
+	border-collapse: collapse;
+}
+#customer_details td { 
+    padding: 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+#customer_details th {
+	padding: 5px;
+    border: 1px solid black;
+	text-align: center;
+}
+
+#admin_pay_order_details{
+	width: 900px;
+	background: white;
+	border-collapse: collapse;
+}
+#admin_pay_order_details td { 
+    padding: 5px;
+	border: 1px solid black;
+	text-align: center;
+}
+#admin_pay_order_details th {
+	padding: 5px;
+    border: 1px solid black;
+	text-align: center;
+}
+
+.formBoarder{
+	border: 1px solid #8D0D19;
+	padding: 20px;
+	align-content: center;
+}
