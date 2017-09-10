@@ -50,7 +50,7 @@ a{
 }
 #main_body{
 	padding-bottom:40px;   /* Height of the footer */
-	height: 628px;
+	min-height: 628px;
 	margin: 0px;
 	padding: 0px;
 	width: 100%;

@@ -1,94 +1,4 @@
 <?php
-function navigation($subject_name){
-	$output = "<ul>";
-	$output .= "<a href=\"index.php\"><li";
-	if ($subject_name == strtolower("Home")){
-		$output .= " class = \"selected\" ";
-	}
-	$output .= ">Home</li></a>";
-	$output .= "<a href=\"foods.php\"><li";
-	if ($subject_name == strtolower("Foods")){
-		$output .= " class = \"selected\" ";
-	}
-	$output .= ">Foods</li></a>";
-	$output .= "<a href=\"orders.php\"><li";
-	if ($subject_name == strtolower("Orders")){
-		$output .= " class = \"selected\" ";
-	}
-	$output .= ">Orders</li></a>";
-	$output .= "<a href=\"payments.php\"><li";
-	if ($subject_name == strtolower("Payments")){
-		$output .= " class = \"selected\" ";
-	}
-	$output .= ">Payments</li></a>";
-	$output .= "<a href=\"contactus.php\"><li";
-	if ($subject_name == strtolower("Contact Us")){
-		$output .= " class = \"selected\" ";
-	}
-	$output .= ">Contact Us</li></a>";
-	$output .= "<a href=\"customerlogin.php\"><li";
-	if ($subject_name == strtolower("Customer Login")){
-		$output .= " class = \"selected\" ";
-	}
-	$output .= ">Customer Login</li></a>";
-	$output .= "<a href=\"userlogin.php\"><li";
-	if ($subject_name == strtolower("Admin Login")){
-		$output .= " class = \"selected\" ";
-	}
-	$output .= ">Admin Login</li></a>";
-	$output .= "</ul>";
-	return $output;
-}
-
-function get_all_foods()	
-	{
-		$query = "SELECT `foods`.id, `foods`.name,`foods`.price,`foods`.remarks,`foods`.image_path,`food_category`.category_name,
-				 `food_category`.position FROM `foods` LEFT JOIN `food_category` ON `foods`.cat_id = `food_category`.id
-				 WHERE visible=1
-				  ORDER BY `food_category`.position,`foods`.name;";
-		$result_foods = mysql_query($query);
-		
-		if (!empty($result_foods)){
-			return $result_foods;
-		}
-	}
-	
-function redirect_to($page_to = NULL)	
-	{
-		if ($page_to != NULL){
-			header("Location: {$page_to}");
-			exit;
-		}
-	}
-
-function get_customer_orders ($cust_id = NULL){
-	if (!is_null($cust_id)){
-		$query = "SELECT `customer_users`.id,`customer_users`.cust_id,`customers`.id,`customers`.name AS cust_name,`customers`.contacts,
-				  `customers`.location, `orders`.id,`orders`.food_id,`orders`.quantity,`orders`.paid,`orders`.order_date,
-				  `orders`.delivery_date, `foods`.id,`foods`.name AS food_name,`foods`.price,`foods`.cat_id, `food_category`.id,
-				  `food_category`.category_name FROM `customer_users` 
-				  INNER JOIN `customers` ON `customer_users`.cust_id = `customers`.id 
-				  INNER JOIN `orders` ON `customer_users`.id = `orders`.cust_id 
-				  INNER JOIN `foods` ON `orders`.food_id = `foods`.id 
-				  INNER JOIN `food_category` ON `foods`.cat_id = `food_category`.id WHERE `customer_users`.id=".$cust_id."";
-		$cust_orders = mysql_query($query);
-		
-		if (!empty($cust_orders)){
-			return $cust_orders;
-		}
-	}
-}
-
-function update_order_number($month,$year){
-	$query = "SELECT IFNULL(MAX(number),0)+1 AS order_no FROM orders_number WHERE (month='".mysql_real_escape_string($month)."') 
-			  AND (year='".mysql_real_escape_string($year)."')";
-	$query_run = mysql_query($query);
-	if ($query_run){
-		$order_no = mysql_result($query_run,0,'order_no');
-		$query = "INSERT INTO `orders_number`(number,month,year) VALUES('".$order_no."','".$month."','".$year."');";
-		$query_run = mysql_query($query);
-	}
-}
 
 function login_page_menu($boardlogin){
 	$output = "<ul>";
@@ -130,4 +40,40 @@ function board_menu($bm){
 	$output .= "</ul>";
 	return $output;
 }
+
+function redirect_to($page_to = NULL)	
+{
+	if ($page_to != NULL){
+		header("Location: {$page_to}");
+		exit;
+	}
+}
+// if(isset($_POST['function']) && isset($_POST['parameter'])){
+	
+// 	$school_id = $_POST['parameter'];
+// 	$function_name = $_POST['function'];
+	
+// 	if ( $function_name == 'get_courses'){
+// 		get_courses($school_id);
+// 	}
+// }
+
+// function get_courses($school_id){
+// 	$output = "";
+// 	$query = "SELECT id,course_Name FROM sch_courses 
+// 			  WHERE school_id = '1'";
+// 	$query_run = mysql_query($query);
+	
+// 	$record_count = mysql_num_rows($query_run);
+// 	if ($record_count > 0){
+// 		for($i=0;$i < $record_count-1;$i++){
+// 			$id = mysql_result($loaded_data,$i,'id');
+// 			$course_name = mysql_result($loaded_data,$i,'course_Name');
+// 			$output .= "<option value=". $id .">". $course_name ."</option>";
+			
+// 		}
+// 	}
+// 	echo $output;
+// }
 ?>
+

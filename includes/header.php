@@ -3,6 +3,7 @@
 	<head>
 		<title>State Vocational</title>
 		<link rel="stylesheet" href="/statevocational/css/main.css">
+		<script src="/statevocational/javascript/jquery-2.2.0.js"></script>
 		<script src="/statevocational/javascript/main.js"></script>
 	</head>
 	

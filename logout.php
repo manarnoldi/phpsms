@@ -1,13 +1,13 @@
 <?php require 'includes/connection.php'; ?>
 <?php include 'includes/functions.php'; ?>
 <?php
-	if (isset($_SESSION['cust_id'])){
-		$redirect_page = 'user_login.php';
-	}else if (isset($_SESSION['user_id'])){
-		$redirect_page = 'customerlogin.php';
+	if (isset($_SESSION['boardlogin'])){
+		$redirect_page = 'schoollogin.php';
+	}else if (isset($_SESSION['schoollogin'])){
+		$redirect_page = 'boardlogin.php';
 	}
 	else{
-		$redirect_page = 'customerlogin.php';
+		$redirect_page = 'schoollogin.php';
 	}
 	session_start();
 	session_destroy();
