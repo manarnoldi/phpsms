@@ -2,8 +2,8 @@
 <?php require 'includes/header.php'; ?>
 <?php include 'includes/functions.php'; ?>
 <?php session_start();
-	if (isset($_SESSION['boardlogin'])){
-		redirect_to('board/schools.php');
+	if (!isset($_SESSION['boardlogin'])){
+		redirect_to('/statevocational/board/schools.php');
 	}	
 ?>	
 	<table id="structure">
