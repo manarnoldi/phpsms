@@ -18,7 +18,8 @@
 			$hashed_password = md5($password);
 			$query = "SELECT * FROM users WHERE username='".mysql_real_escape_string($user_name)."' AND
 						password='".mysql_real_escape_string($hashed_password)."' AND 
-						schoolid='".mysql_real_escape_string($school_name)."'";
+						schoolid='".mysql_real_escape_string($school_name)."' AND 
+						userFor='1'";
 			$query_run = mysql_query($query);
 			
 			if ($query_run){

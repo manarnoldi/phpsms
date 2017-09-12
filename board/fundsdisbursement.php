@@ -1,8 +1,13 @@
 <?php require '/../includes/connection.php'; ?>
 <?php require '/../includes/header.php'; ?>
 <?php include '/../includes/functions.php'; ?>
-<?php
+<?php 
 	session_start();
+	if (!isset($_SESSION['boardlogin'])){
+		redirect_to('/statevocational/boardlogin.php');
+	}	
+?>	
+<?php
 	$error_message = NULL;
 	
 	if (isset($_POST['school_name']) && isset($_POST['fund_name']) && isset($_POST['amount'])){

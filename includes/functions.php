@@ -18,12 +18,12 @@ function school_menu($sm){
 	$output .= "<a href=\"studentdetails.php\"><li"; if($sm == "studentdetails") { $output .= " class = \"selected\""; }$output .=">Student Details</li></a>";
 	$output .= "<a href=\"studentattendance.php\"><li"; if($sm == "studentattendance") { $output .= " class = \"selected\""; }$output .=">Student Attendance</li></a>";
 	$output .= "<a href=\"studentdiscipline.php\"><li"; if($sm == "studentdiscipline") { $output .= " class = \"selected\""; }$output .=">Student Discipline</li></a>";
-	$output .= "<a href=\"exams.php\"><li"; if($sm == "exams") { $output .= " class = \"selected\""; }$output .=">Exams</li></a>";
-	$output .= "<a href=\"examresults.php\"><li"; if($sm == "examresults") { $output .= " class = \"selected\""; }$output .=">Exam Results</li></a>";
+	// $output .= "<a href=\"exams.php\"><li"; if($sm == "exams") { $output .= " class = \"selected\""; }$output .=">Exams</li></a>";
+	// $output .= "<a href=\"examresults.php\"><li"; if($sm == "examresults") { $output .= " class = \"selected\""; }$output .=">Exam Results</li></a>";
 	$output .= "<a href=\"extracurriculum.php\"><li"; if($sm == "extracurriculum") { $output .= " class = \"selected\""; }$output .=">Extra Curriculum</li></a>";
 	$output .= "<a href=\"fundsusage.php\"><li"; if($sm == "fundsusage") { $output .= " class = \"selected\""; }$output .=">Funds Usage</li></a>";
 	$output .= "<a href=\"affiliations.php\"><li"; if($sm == "affiliations") { $output .= " class = \"selected\""; }$output .=">Affiliations</li></a>";
-	$output .= "<a href=\"leavingrecords.php\"><li"; if($sm == "leavingrecords") { $output .= " class = \"selected\""; }$output .=">Leaving Records</li></a>";
+	//$output .= "<a href=\"leavingrecords.php\"><li"; if($sm == "leavingrecords") { $output .= " class = \"selected\""; }$output .=">Leaving Records</li></a>";
 	$output .= "</ul>";
 	return $output;
 }

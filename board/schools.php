@@ -1,8 +1,13 @@
 <?php require '/../includes/connection.php'; ?>
 <?php require '/../includes/header.php'; ?>
 <?php include '/../includes/functions.php'; ?>
-<?php
+<?php 
 	session_start();
+	if (!isset($_SESSION['boardlogin'])){
+		redirect_to('/statevocational/boardlogin.php');
+	}	
+?>	
+<?php
 	$error_message = NULL;
 	if (isset($_POST['name']) && isset($_POST['capacity']) && isset($_POST['location_details'])){
 		$name = $_POST['name'];
@@ -52,7 +57,11 @@
 					<input type="text" name="location_details" size="45" /><br ><br >
 					Other Details:<br ><br >
 					<textarea rows="5" cols="42" name="other_details"></textarea><br ><br >
-					<input type="submit" name="submit" value="Register School" /><br ><br >
+					<input type="submit" name="submit" value="Register School" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="../logout.php">Log Out...</a>
 					<?php 
 						if(!empty($error_message)){
 							echo $error_message;

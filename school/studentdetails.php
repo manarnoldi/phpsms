@@ -4,7 +4,7 @@
 <?php 
 	session_start();
 	if (!isset($_SESSION['schoollogin'])){
-		redirect_to('/statevocational1/school/schoollogin.php');
+		redirect_to('/statevocational/schoollogin.php');
 	}	
 ?>	
 <?php
